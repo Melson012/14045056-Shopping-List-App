@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="index">   	
+	<div data-role = "header" data-theme=b>
+		<h1>Shopping APP</h1>
+	</div>
+
+	<div data-role="main", class= "ui-content">
+		<p> Choose from below: </p>
+		<a href="#CrList" data-transition="pop" class="ui-btn "> Create List</a>
+		<a href="#PreMadeList" data-transition="pop" class="ui-btn "> Choose From Pre-made List </a>
+	</div>
+</div>
+
+
+
+
+<div data-role="page" id="PreMadeList">
+	<div data-role = "header" data-theme=b>
+		<a href="javascript:history.back()" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"></a>
+		<h1>Pre-Made List</h1>
+	</div>
+
+	<div data-role="main", class= "ui-content">
+		<form>
+	    <input id="filter-for-listview" data-type="search" placeholder="Type to search...">
+	    </form>
+	    <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter-for-listview">
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Adele</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Agnes</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Albert</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Billy</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Bob</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Calvin</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Cameron</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Chloe</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Christina</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Diana</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Gabriel</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Glen</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Ralph</a></li>
+	        <li><a href="#" class="ui-btn ui-icon-plus ui-btn-icon-right">Valarie</a></li>
+	        </ul>
+		</div>
+</div>
+
+
+<div data-role="page" id="CrList">
+	<div data-role = "header" data-theme=b>
+		<a href="javascript:history.back()" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"></a>
+		<h1>Create List</h1>
+	</div>
+
+	<div data-role="main", class="ui-content">
+		<form id="todoForm">
+	        <input id="todoInput">
+	        <button type="button" onclick="todoList()">Add</button>
+	        <button id="remove_li">Remove</button>
+	        </form>
+	        <ol id="todoList">
+	        </ol>
+
+	        <script>
+	        function todoList() {
+	            var item = document.getElementById("todoInput").value
+	            var text = document.createTextNode(item)
+	            var newItem = document.createElement("li")
+	            newItem.appendChild(text)
+	            document.getElementById("todoList").appendChild(newItem)
+	        }
+	        </script>
+	        <script>
+	        $(document).ready(function (){
+
+	        	$("#remove_li").click(function(){
+	        		$("li:last").remove()
+	        	})
+
+	        })
+	        	
+	        </script>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
