@@ -16,6 +16,14 @@ h2{
 text-align: center;
 
 }
+div #weekdays{
+padding-left: 50px;
+padding-right: 50px;
+}
+div #enter{
+padding-left: 50px;
+padding-right: 50px;
+}
 header {
 text-align: center;
 padding-top: 50px;
@@ -110,21 +118,21 @@ input[type=CHECKBOX].box {
 display: none;
 }
 input[type=checkbox].box + label.check-label {
-padding-left: 20px;
-height: 15px;
+padding-left: 41px;
+height: 36px;
 display: inline-block;
 line-height: 15px;
 background-repeat: no-repeat;
 background-position: 0 0;
-font-size: 15px;
+font-size: 36px;
 vertical-align: middle;
 cursor: pointer;
 }
 input[type=checkbox].box:checked + label.check-label {
-background-position: 0 -15px;
+background-position: 0 -36px;
 }
 label.check-label {
-background-image: url(http://www.csscheckbox.com/checkboxes/u/csscheckbox_d2b25024735394b3e45db98ce4cf9265.png);
+background-image: url(http://csscheckbox.com/checkboxes/u/csscheckbox_5e67f778a4d9b72b5f87ea729418f5ce.png);
 -webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
