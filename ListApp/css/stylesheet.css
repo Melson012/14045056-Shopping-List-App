@@ -14,8 +14,48 @@ text-align: middle;
 }
 h2{
 text-align: center;
+color: white;
 
 }
+div.list{
+align: center;
+overflow: scroll;
+
+}
+#list{
+overflow: scroll;
+
+}
+a{
+border-radius: 40px;
+}
+#home{
+background-color: grey;
+overflow: scroll;
+
+}
+#index{
+background-color: grey;
+overflow: scroll;
+}
+#main{
+overflow: scroll;
+padding-bottom: 0px;
+}
+tbody{
+overflow: scroll;
+width: 10px;
+align-items: center;
+
+}
+table.items {
+width: 100%;
+ border-spacing: 5px 10px;
+}
+th {
+
+}
+
 div #weekdays{
 padding-left: 50px;
 padding-right: 50px;
@@ -24,6 +64,7 @@ div #enter{
 padding-left: 50px;
 padding-right: 50px;
 }
+
 header {
 text-align: center;
 padding-top: 50px;
@@ -73,33 +114,56 @@ text-decoration: underline;
 text-align: right;
 font-size: 14px;
 min-width: 600px;
+text-align: center;
 }
 .edit span {
 cursor: pointer;
+color: black;
+background-color: #FF6699;
+border-radius: 15px;
+
 }
 .list h3 {
 text-align: center;
+
 }
 .items {
 clear: both;
 margin: 0 auto;
 }
+
 td {
-padding: 10px 10px;
+padding: 5px 5px;
 font-size: 16px;
+overflow: scroll;
+padding:3px;
+width: 50px;
+
 }
 thead tr {
 border: none;
+overflow: scroll;
+
+
+
+}
+span { 
+display:inline-block;
+width:50px;
+
 }
 tr {
 border-bottom: 1px solid #ecf0f1;
+overflow: scroll;
+
 }
 .cross {
 display: none;
-cursor: pointer;
+cursor: pointer; 
 }
 .content {
 width: 500px;
+
 }
 .checked {
 position: relative;
