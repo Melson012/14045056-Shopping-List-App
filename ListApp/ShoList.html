@@ -20,6 +20,12 @@
     <a href="#Monday" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-right">Create List</a> 
     <a href="#mylist" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-right">Pre-Made List</a></div>
     
+    
+    
+    
+    <img src="imge/To_Do_List" alt class="introImage" style="width:128px;height:128px;">
+    
+    
 	</div>
 </div>
 
@@ -75,7 +81,7 @@
 	<div data-role="main" class="ui-content">
 	<div class="input">
 	<input type="text" class="custinput" id="item-input	" placeholder="Enter shopping item..." autofocus>
-	<button type="submit" class="btn">add</button>
+	<button type="submit" class="btn" data-theme="b">add</button>
 	</div>
 	<div class="list">
 	<h3>List:</h3>
@@ -190,7 +196,7 @@ function clearStorage(){
       <input id="myFilter" data-type="search">
       <button onclick="showChosenItems()" class="ui-btn ui-btn-b ui-btn-inline">Show Chosen Items</button>
     </form>
-    <ul data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+    <ul data-role="listview" data-theme="b" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
       <li><a onclick="gotoQuantity(this)">Apples</a></li>
       <li><a onclick="gotoQuantity(this)">Apricots</a></li>
       <li><a onclick="gotoQuantity(this)">Aubergines</a></li>
@@ -230,10 +236,10 @@ function clearStorage(){
   	  <div id="vegname"></div>
     <div class="ui-field-contain">
        <label for="spin">Input spinner</label>
-       <input type="text" data-role="spinbox" name="spin" id="spin" value="0" min="0" max="10" />
+       <input type="text" data-role="spinbox" data-theme="b" name="spin" id="spin" value="0" min="0" max="10" />
       </div>
-      <button onclick="backToList()">Choose Again</button>
-      <button onclick="showChosenItems()">Show Chosen Items</button>
+      <button onclick="backToList()" data-theme="b">Choose Again</button>
+      <button onclick="showChosenItems()" data-theme="b">Show Chosen Items</button>
  </div>
  
 </div>
@@ -245,10 +251,10 @@ function clearStorage(){
     </div>
   <div data-role="main" class="ui-content">
   <div id="allVegetablesChosen">
-  <ul data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true" id="shoppingList">
+  <ul data-role="listview" data-theme="b" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true" id="shoppingList">
   </ul>
-  <button onclick="$.mobile.changePage('#mylist');">Choose Again</button>
-  <button onclick="clearStorage()">Clear List</button>
+  <button onclick="$.mobile.changePage('#mylist');" data-theme="b">Choose Again</button>
+  <button onclick="clearStorage()" data-theme="b">Clear List</button>
   
   </div>
   </div>
