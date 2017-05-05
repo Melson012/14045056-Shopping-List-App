@@ -17,8 +17,8 @@
 
 	<div data-role="main" class="ui-content">
 	<div id="enter">
-    <a href="#Monday" class="ui-btn ui-icon-bars ui-btn-icon-right">Create List</a> 
-    <a href="#mylist" class="ui-btn ui-icon-bars ui-btn-icon-right">Pre-Made List</a></div>
+    <a href="#Monday" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-right">Create List</a> 
+    <a href="#mylist" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-right">Pre-Made List</a></div>
     
 	</div>
 </div>
@@ -180,6 +180,7 @@ function clearStorage(){
 <div data-role="page" id="mylist">
 <div data-role="header" data-theme="b">
    <h2>Groceries</h2>
+   <a href="javascript:history.back()" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"></a>
    
    </div>
    
@@ -221,6 +222,10 @@ function clearStorage(){
 </div> 
 
 <div data-role="page" id="quantity">
+<div data-role="header" data-theme="b">
+	<h1>Quantity</h1>
+    <a href="javascript:history.back()" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"></a>
+    </div>
   <div data-role="main" class="ui-content">
   	  <div id="vegname"></div>
     <div class="ui-field-contain">
@@ -234,6 +239,10 @@ function clearStorage(){
 </div>
 
 <div data-role="page" id="finalShoppingList">
+<div data-role="header" data-theme="b">
+	<h1>My List</h1>
+    <a href="javascript:history.back()" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"></a>
+    </div>
   <div data-role="main" class="ui-content">
   <div id="allVegetablesChosen">
   <ul data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true" id="shoppingList">
