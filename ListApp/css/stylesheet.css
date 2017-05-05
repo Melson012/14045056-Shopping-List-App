@@ -34,6 +34,9 @@ background-color: grey;
 overflow: scroll;
 
 }
+#mylist{
+background-color: grey;
+}
 #index{
 background-color: grey;
 overflow: scroll;
@@ -50,7 +53,9 @@ align-items: center;
 }
 table.items {
 width: 100%;
- border-spacing: 5px 10px;
+border-spacing: 5px 10px;
+overflow: scroll;
+
 }
 th {
 
@@ -112,15 +117,17 @@ outline: none;
 .edit {
 text-decoration: underline;
 text-align: right;
-font-size: 14px;
+font-size: 30px;
 min-width: 600px;
-text-align: center;
+text-align: right;
+padding-right:50px;
+
 }
 .edit span {
 cursor: pointer;
 color: black;
-background-color: #FF6699;
-border-radius: 15px;
+background-color: lightgreen;
+border-radius: 50px;
 
 }
 .list h3 {

@@ -6,6 +6,7 @@
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
 <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+<script type="text/javascript" src="http://dev.jtsage.com/cdn/spinbox/latest/jqm-spinbox.min.js"></script>
 </head>
 <body>
 
@@ -16,9 +17,9 @@
 
 	<div data-role="main" class="ui-content">
 	<div id="enter">
-	<a href="#index" class="ui-btn ui-icon-bars ui-btn-icon-right">Create List</a>
-	<a href="#??" class="ui-btn ui-icon-bars ui-btn-icon-right">Pre-Made List</a>
-	</div>
+    <a href="#Monday" class="ui-btn ui-icon-bars ui-btn-icon-right">Create List</a> 
+    <a href="#mylist" class="ui-btn ui-icon-bars ui-btn-icon-right">Pre-Made List</a></div>
+    
 	</div>
 </div>
 
@@ -50,8 +51,8 @@
     	
 		    <ul>
 		      <li><a href="#home" class="ui-btn ui-btn-b ui-corner-all ui-icon-home ui-btn-icon-top ">home</a></li>
-		      <li><a href="#??" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">Pre-Made List</a></li>
-		      <li><a href="#index" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">List</a></li>
+		      <li><a href="#mylist" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">Pre-Made List</a></li>
+		      <li><a href="#Monday" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">List</a></li>
 		    </ul>
 		    
 		 </div>
@@ -97,8 +98,8 @@
     	
 		    <ul>
 		      <li><a href="#home" class="ui-btn ui-btn-b ui-corner-all ui-icon-home ui-btn-icon-top ">home</a></li>
-		      <li><a href="#??" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">Pre-Made List</a></li>
-		      <li><a href="#index" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">List</a></li>
+		      <li><a href="#mylist" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">Pre-Made List</a></li>
+		      <li><a href="#Monday" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">List</a></li>
 		    </ul>
 		    
 		 </div>
@@ -106,6 +107,144 @@
 </div>
 
 
+
+
+
+<script>
+var chosenItems = {};
+
+$( document ).ready(function() {
+    // you can only save strings to local storage
+	// so all js objects have to be saved in the form JSON.stringify()
+	// and retrieved in the format JSON.parse(obj)
+    var q = localStorage.getItem("previousList");
+	if (q!=null) chosenItems = JSON.parse(q);
+});
+
+
+
+function gotoQuantity(obj)
+{
+	$.mobile.changePage("#quantity");
+	vegetablesChosen = $(obj).text();
+	$("#vegname").text(vegetablesChosen);
+	
+	
+}
+
+function showChosenItems()
+{
+	if ($("#spin").val()!="0")    saveChoice();
+	
+	//remove existing items from shopping list
+	 $("#shoppingList").empty();
+	 
+	 //iterate through the dictionary chosenItems
+	 for (var key in chosenItems) {
+     
+	  vegData = key + ":" +  chosenItems[key];
+	  $('<li>').append('<a href="#">' + vegData + '</a>').appendTo('#shoppingList');
+	  
+	  
+  	 }
+	//you have to navigate to the page after you have populated
+	$.mobile.changePage("#finalShoppingList");
+	var retrievedData = localStorage.getItem("previousList");
+	var chosenItems1 = JSON.parse(retrievedData);
+	alert(movies2.length);
+	 $("#shoppingList").listview('refresh');
+	
+	
+}
+
+function backToList()
+{
+	saveChoice();
+	$.mobile.changePage("#mylist");
+	$("#spin").val(0);
+}
+
+function saveChoice()
+{
+	vegetableChosen = $("#vegname").text();
+	quantityChosen = $("#spin").val();
+	chosenItems[vegetableChosen] = quantityChosen;
+	localStorage.setItem("previousList",JSON.stringify(chosenItems));
+}
+function clearStorage(){
+	window.localStorage.clear();
+}
+
+</script>
+
+<div data-role="page" id="mylist">
+<div data-role="header" data-theme="b">
+   <h2>Groceries</h2>
+   
+   </div>
+   
+  <div data-role="main" class="ui-content">
+    
+    <form class="ui-filterable">
+      <input id="myFilter" data-type="search">
+      <button onclick="showChosenItems()" class="ui-btn ui-btn-b ui-btn-inline">Show Chosen Items</button>
+    </form>
+    <ul data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+      <li><a onclick="gotoQuantity(this)">Apples</a></li>
+      <li><a onclick="gotoQuantity(this)">Apricots</a></li>
+      <li><a onclick="gotoQuantity(this)">Aubergines</a></li>
+      <li><a onclick="gotoQuantity(this)">Bananas</a></li>
+      <li><a onclick="gotoQuantity(this)">Beetroot</a></li>
+      <li><a onclick="gotoQuantity(this)">Carrots</a></li>
+      <li><a onclick="gotoQuantity(this)">Courgettes</a></li>
+      <li><a onclick="gotoQuantity(this)">Chives</a></li>
+      <li><a onclick="gotoQuantity(this)">Fennel</a></li>
+      <li><a onclick="gotoQuantity(this)">Potatoes</a></li>
+      <li><a onclick="gotoQuantity(this)">Strawberries</a></li>
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer style="position: fixed; bottom: 0px; width: 100%; height: 50px; background-color: black;">
+    	<div data-role="navbar" data-theme="b">
+    	
+		    <ul>
+		      <li><a href="#home" class="ui-btn ui-btn-b ui-corner-all ui-icon-home ui-btn-icon-top ">home</a></li>
+		      <li><a href="#mylist" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">Pre-Made List</a></li>
+		      <li><a href="#Monday" class="ui-btn ui-btn-b ui-corner-all ui-icon-grid ui-btn-icon-top">List</a></li>
+		    </ul>
+		    
+		 </div>
+  </footer>
+</div> 
+
+<div data-role="page" id="quantity">
+  <div data-role="main" class="ui-content">
+  	  <div id="vegname"></div>
+    <div class="ui-field-contain">
+       <label for="spin">Input spinner</label>
+       <input type="text" data-role="spinbox" name="spin" id="spin" value="0" min="0" max="10" />
+      </div>
+      <button onclick="backToList()">Choose Again</button>
+      <button onclick="showChosenItems()">Show Chosen Items</button>
+ </div>
+ 
+</div>
+
+<div data-role="page" id="finalShoppingList">
+  <div data-role="main" class="ui-content">
+  <div id="allVegetablesChosen">
+  <ul data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true" id="shoppingList">
+  </ul>
+  <button onclick="$.mobile.changePage('#mylist');">Choose Again</button>
+  <button onclick="clearStorage()">Clear List</button>
+  
+  </div>
+  </div>
+
+  </div>
 
 
 
